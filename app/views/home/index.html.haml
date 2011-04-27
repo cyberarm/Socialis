@@ -1,0 +1,9 @@
+- if logged_in?
+ %p here is content
+ %p here is more content
+ %p here is more content
+ %p And more content
+
+- else
+ = flash[:alert] = "You need to login to continue."
+ = render :template => 'sessions/new'

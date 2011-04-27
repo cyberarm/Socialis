@@ -1,0 +1,15 @@
+#status
+  %h3 #{@status.author.mb_chars.capitalize.to_s} Posted:
+  %h2
+    #{autolink markdown @status.message}
+    - if @status.message.nil?
+      Error: Status Message is Nil!
+  %br/
+  %b
+    - if @status.author == current_user.username
+      = "Created By You"
+      %br/
+      = link_to 'Delete', "#{@statusdel.id}", :confirm => 'Are you sure?', :method => :delete
+      %br/
+    - else
+    (Created: #{time_ago_in_words(@status.created_at)} ago)

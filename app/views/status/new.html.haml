@@ -1,0 +1,14 @@
+- title "New Status"
+- form_tag(:controller => "status", :action => "create") do
+  %h2
+    = label_tag(:message, "What are you doing right now?")
+  = text_area_tag(:message, nil, :size => "44x6", :placeholder => "Type something...")
+  %br/
+  = text_field_tag :author, "", :value => "#{current_user.username}", :style => "display: none;"
+  = submit_tag("Post Status", :class => "status-buton")
+  %br/
+  %b{:style => "font-size:25px;"} Please note: All status that are posted are public!
+  %br/
+  %b Statuses are formatted in <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a>.
+  %br/
+  %b "http://some-random-website.com" will autoatically turn into a Link

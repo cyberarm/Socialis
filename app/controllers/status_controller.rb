@@ -1,0 +1,41 @@
+class StatusController < ApplicationController
+
+  def index
+    @status = Status.find(:all)
+end
+
+  
+  # GET /status/1
+  # GET /status/1.xml
+  def show
+  	
+  	@status = Status.find_by_shortened(params[:id])
+  	@statusdel = Status.find_by_shortened(params[:id])
+
+end
+
+def create  
+    @status = Status.create(:message => params[:message], :author => params[:author])  
+    respond_to do |format|  
+      if @status.save  
+	      flash[:notice] = "Status Saved"
+        format.html { redirect_to "/status" }  
+      else  
+        flash[:notice] = "Message failed to save."  
+        format.html { redirect_to "/status/new" }  
+      end  
+    end  
+  end 
+ 
+  
+  def destroy
+  	
+    @status = Status.find(params[:id])
+    @status.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(status_url) }
+      format.xml  { head :ok }
+    end
+  end
+end

@@ -1,0 +1,13 @@
+- for status in @status do
+  #status
+    = autolink markdown status.message
+    - if status.message.nil?
+      %span.warning Error: Status Message is Nil!
+    %br/
+    %h3
+      (Posted By: #{status.author}
+      ,
+      Created: #{time_ago_in_words(status.created_at)} Ago)
+      %br/
+      %a{:href => "/status/#{status.shorten}", :rel => "nofollow"} (View Status)
+  %br/
