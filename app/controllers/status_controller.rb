@@ -1,4 +1,5 @@
 class StatusController < ApplicationController
+before_filter :login_required, :except => [:index]
 
   def index
     @status = Status.find(:all)

@@ -20,6 +20,7 @@ a {
 
 #container {
   width: 75%;
+  height: 90%;
   margin: 0 auto;
   background-color: #FFF;
   padding: 20px 40px;
@@ -27,12 +28,42 @@ a {
   margin-top: 20px;
 }
 
+#status {
+float: none;
+width: 700px;
+padding: 2px;
+background-color: #3B5998;
+text-decoration:none;
+color: white;
+font-weight: bold;
+border-style: solid;
+border-color: black;
+border-width:1px;
+border-radius: 6px;
+margin: 8px;
+}
+
+#user {
+float: none;
+width: 200px;
+padding: 2px;
+background-color: #3B5998;
+text-decoration:none;
+color: white;
+font-weight: bold;
+border-style: solid;
+border-color: black;
+border-width:1px;
+border-radius: 6px;
+margin: 5px;
+}
+
 #profilebox {
+	float:right;
 	border: solid 2px lime;
 	background-color: #CFC;
-	float:right;
 	padding:10px;
-	margin: 8px;
+	margin: 20px;
 }
 #profilebox img{
 	border:solid 1px black;
@@ -41,9 +72,28 @@ a {
 	border-radius: 4px;
 }
 
+#menu {
+margin: 10px;
+}
+.menu {
+padding: 2px;
+background-color: #3B5998;
+text-decoration:none;
+color: white;
+font-size: 25px;
+border-style: solid;
+border-color: black;
+border-width:1px;
+height: 40px;
+border-radius: 6px;
+}
+.menu:hover {
+background-color: #4B7399;
+}
+
 #flash_notice, #flash_error, #flash_alert {
   padding: 5px 8px;
-  margin: 10px 0;
+  margin: 10px;
 }
 
 #flash_notice {

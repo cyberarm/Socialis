@@ -1,0 +1,6 @@
+- for status in @my_statuses do
+  #status
+    = autolink markdown status.message
+    %h3
+      (Created: #{time_ago_in_words(status.created_at)} Ago)
+    %br/

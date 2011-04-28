@@ -6,9 +6,11 @@
   %br/
   = text_field_tag :author, "", :value => "#{current_user.username}", :style => "display: none;"
   = submit_tag("Post Status", :class => "status-buton")
+  (Max of 200 characters)
   %br/
-  %b{:style => "font-size:25px;"} Please note: All status that are posted are public!
   %br/
-  %b Statuses are formatted in <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a>.
+  %b{:style => "font-size:20px;"} Please note: All status that are posted are public!
   %br/
-  %b "http://some-random-website.com" will autoatically turn into a Link
+  %b Statuses are formatted in <a target="_blank" href="http://daringfireball.net/projects/markdown/syntax">Markdown</a>.
+  %br/
+  %b "http://some-random-website.com" will automatically turn into a Link

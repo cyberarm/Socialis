@@ -7,3 +7,8 @@ module ApplicationHelper
     auto_link(text)
   end
 end
+
+public
+def first_capitalize
+  mb_chars.capitalize.to_s
+end

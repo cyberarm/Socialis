@@ -1,6 +1,6 @@
 #status
   %h3 #{@status.author.mb_chars.capitalize.to_s} Posted:
-  %h2
+  %p
     #{autolink markdown @status.message}
     - if @status.message.nil?
       Error: Status Message is Nil!

@@ -1,6 +1,7 @@
 class Status < ActiveRecord::Base
   
   default_scope :order => 'created_at DESC'
+  
 	  def shorten
     self.id.alphadecimal
  end

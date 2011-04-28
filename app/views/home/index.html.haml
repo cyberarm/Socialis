@@ -1,9 +1,22 @@
-- if logged_in?
- %p here is content
- %p here is more content
- %p here is more content
- %p And more content
-
-- else
- = flash[:alert] = "You need to login to continue."
- = render :template => 'sessions/new'
+%h2 Latest Statuses:
+%hr/
+- for status in @latest do
+  #status
+    = autolink markdown status.message
+    - if status.message.nil?
+      %span.warning Error: Status Message is Nil!
+    %br/
+    %h3
+      Posted By: #{status.author.first_capitalize},
+      Created: #{time_ago_in_words(status.created_at)} Ago
+      %br/
+  %br/
+%h2 Latest Users:
+%hr/
+- for user in @user do
+  #user
+    %h3
+      - if logged_in?
+        %a{:href => "/profiles/#{user.username}"}= user.username
+      - else
+        = user.username
