@@ -4,6 +4,10 @@ body {
   font-size: 14px;
 }
 
+textarea {
+resize: none;
+}
+
 a img {
   border: none;
 }
@@ -32,7 +36,7 @@ a {
 float: none;
 width: 700px;
 padding: 2px;
-background-color: #3B5998;
+background-color: #FB1;
 text-decoration:none;
 color: white;
 font-weight: bold;

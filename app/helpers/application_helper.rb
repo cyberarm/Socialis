@@ -6,6 +6,10 @@ module ApplicationHelper
   def autolink(text)
     auto_link(text)
   end
+  
+  def socialis_version
+    "Socialis version: 0.0.0.50"
+  end
 end
 
 public

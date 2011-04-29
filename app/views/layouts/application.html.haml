@@ -11,10 +11,10 @@
       %center
         #profilebox
           - if logged_in?
-            <a href="/profiles/#{current_user.username}">
+            <a href="/profiles/#{current_user.username}" title="View your public profile at: #{request.url}/profiles/#{current_user.username}">
             = gravatar_image_tag(current_user.email, :gravatar => { :secure => true, :default => 'http://github.com/images/gravatars/gravatar-80.png', :size => 64 })
             </a>
-            %p Welcome #{current_user.username}!
+            %p Welcome #{current_user.username.first_capitalize}!
             %p
               \#{link_to "Account" , edit_current_user_path}
             %p
@@ -26,11 +26,11 @@
         %p{:style => "font-size: 45px; text-shadow: 0px 0px 6px black; color: #b3f609;"} Socialis
         #menu
           %br/
-          %a{:href => "/", :class => "menu"} Home
-          %a{:href => "/status", :class => "menu"} Statuses
+          %a{:href => root_url, :class => "menu"} Home
+          %a{:href => statuses_path, :class => "menu"} Statuses
           - if logged_in?
             %a{:href => "/status/new", :class => "menu"} New Status
-            %a{:href => "/profiles/#{current_user.username}", :class => "menu"} My Profile
+            %a{:href => "/profile", :class => "menu"} My Profile
           %br/
           %br/
         - flash.each do |name, msg|

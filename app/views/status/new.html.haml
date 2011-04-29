@@ -2,7 +2,7 @@
 - form_tag(:controller => "status", :action => "create") do
   %h2
     = label_tag(:message, "What are you doing right now?")
-  = text_area_tag(:message, nil, :size => "44x6", :placeholder => "Type something...")
+  = text_area_tag(:message, nil, :size => "44x6", :placeholder => "Type something...", :maxlength => 200)
   %br/
   = text_field_tag :author, "", :value => "#{current_user.username}", :style => "display: none;"
   = submit_tag("Post Status", :class => "status-buton")

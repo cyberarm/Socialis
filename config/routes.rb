@@ -18,7 +18,7 @@ Socialis::Application.routes.draw do
   
   resources :status
   
-
+  match '/statuses' => 'status#index'
   match '/about' => 'home#about'
   match '/profile' => 'profile#index'
   match '/profiles/:id' => 'profile#show'

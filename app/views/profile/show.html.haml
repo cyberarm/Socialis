@@ -5,6 +5,9 @@
 %h3 Latest Statuses:
 - for status in @user_statuses do
   #status
+    - if @my_lastest_statuses.nil?
+    - else
+      %h2 No Statuses
     = autolink markdown status.message
     %h3
       (Created: #{time_ago_in_words(status.created_at)} Ago)

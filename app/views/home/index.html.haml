@@ -1,3 +1,4 @@
+%h2 Running #{socialis_version}
 %h2 Latest Statuses:
 %hr/
 - for status in @latest do
@@ -8,7 +9,7 @@
     %br/
     %h3
       Posted By: #{status.author.first_capitalize},
-      Created: #{time_ago_in_words(status.created_at)} Ago
+      #{time_ago_in_words(status.created_at)} Ago
       %br/
   %br/
 %h2 Latest Users:

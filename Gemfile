@@ -9,6 +9,7 @@ gem 'haml'
 gem 'gravatar_image_tag'
 gem 'alphadecimal'
 gem 'bluecloth'
+gem 'kaminari'
 
 group :development do
 gem 'nifty-generators'
