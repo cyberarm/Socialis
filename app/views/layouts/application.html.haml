@@ -20,7 +20,7 @@
           %br/
           #profilebox
             - if logged_in?
-              <a href="/profiles/#{current_user.username}" title="View your public profile at: #{request.url}profiles/#{current_user.username}">#{gravatar_image_tag(current_user.email, :gravatar => { :secure => true, :default => 'http://github.com/images/gravatars/gravatar-70.png', :size => 64 })}</a>
+              <a href="/profiles/#{current_user.username}" title="View your public profile at: #{request.url}profiles/#{current_user.username}">#{gravatar_image_tag(current_user.email, :gravatar => { :secure => true, :default => 'http://github.com/images/gravatars/gravatar-40.png', :size => 64 })}</a>
               %br
               %b
                 Welcome #{current_user.username.first_capitalize}!

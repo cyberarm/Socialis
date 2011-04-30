@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110427160922) do
+ActiveRecord::Schema.define(:version => 20110430223928) do
 
   create_table "statuses", :force => true do |t|
     t.text     "message"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20110427160922) do
     t.string   "password_salt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "about"
   end
 
 end

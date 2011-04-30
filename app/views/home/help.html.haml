@@ -1,0 +1,6 @@
+%h1 Need Help With Socialis?
+%h2 Q&amp;A
+%p Q: How do I change my profile picture?
+%p A: We use gravatar.com for profile pictures.
+- if logged_in?
+ ( Just sign-up with email: #{current_user.email})

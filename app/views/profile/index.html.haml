@@ -1,3 +1,14 @@
+%h1 This is your profile #{current_user.username.first_capitalize}
+%h2 Account Details:
+%h3 Username: #{current_user.username}
+%h3 Email: #{current_user.email}
+%h3 About You: 
+- if current_user.about.nil?
+  Its Blank!
+- else
+  #{current_user.about}
+%br/
+%h2 Your Status Updates:
 - for status in @my_statuses do
   #status
     = autolink markdown status.message

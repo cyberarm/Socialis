@@ -6,6 +6,11 @@
   %br/
   Profile Image
 %h3 Member since: #{time_ago_in_words(@userl.created_at)} ago
+%h3 About #{@userl.username.first_capitalize}: 
+- if @userl.about.nil?
+  Its Blank!
+- else
+  #{@userl.about}
 %h3 Latest Statuses:
 - for status in @user_statuses do
   #status
