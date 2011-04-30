@@ -13,7 +13,13 @@ a img {
 }
 
 a {
-  color: #0000FF;
+  color: #333;
+}
+a:hover { 
+color: #999;
+}
+a:active {
+color: black;
 }
 
 .clear {
@@ -33,10 +39,9 @@ a {
 }
 
 #status {
-float: none;
 width: 700px;
 padding: 2px;
-background-color: #FB1;
+background-color: #777;
 text-decoration:none;
 color: white;
 font-weight: bold;
@@ -48,7 +53,7 @@ margin: 8px;
 }
 
 #user {
-float: none;
+display: block;
 width: 200px;
 padding: 2px;
 background-color: #3B5998;
@@ -63,16 +68,24 @@ margin: 5px;
 }
 
 #profilebox {
-	float:right;
+	float:none;
 	border: solid 2px lime;
 	background-color: #CFC;
 	padding:10px;
-	margin: 20px;
+	margin: 10px;
 }
 #profilebox img{
 	border:solid 1px black;
 	background-color: white;
 	padding: 4px;
+	border-radius: 4px;
+}
+
+#user-image img{
+	border:solid 1px black;
+	background-color: white;
+	padding: 4px;
+	margin: 5px;
 	border-radius: 4px;
 }
 
@@ -93,6 +106,11 @@ border-radius: 6px;
 }
 .menu:hover {
 background-color: #4B7399;
+color: white;
+}
+.menu:active {
+background-color: #111;
+color: white;
 }
 
 #flash_notice, #flash_error, #flash_alert {

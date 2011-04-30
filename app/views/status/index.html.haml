@@ -9,7 +9,9 @@
       %span.warning Error: Status Message is Nil!
     %br/
     %h3
-      (Posted By: #{status.author}
+      (Posted By: 
+      - if logged_in?
+        %a{:href=> "/profiles/#{status.author}"} #{status.author.first_capitalize}
       ,
       Created: #{time_ago_in_words(status.created_at)} Ago)
       %br/

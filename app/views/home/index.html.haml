@@ -1,4 +1,7 @@
-%h2 Running #{socialis_version}
+<h2> Running 
+%span{:style => "color:orange;"}
+  #{socialis_version}
+</h2>
 %h2 Latest Statuses:
 %hr/
 - for status in @latest do
@@ -8,15 +11,19 @@
       %span.warning Error: Status Message is Nil!
     %br/
     %h3
-      Posted By: #{status.author.first_capitalize},
-      #{time_ago_in_words(status.created_at)} Ago
+      Posted By: 
+      - if logged_in?
+        <a href="/profiles/#{status.author}">#{status.author.first_capitalize}</a>,
+        #{time_ago_in_words(status.created_at)} Ago
+      - else
+        #{status.author.first_capitalize}
       %br/
   %br/
 %h2 Latest Users:
 %hr/
 - for user in @user do
   #user
-    %h3
+    %p
       - if logged_in?
         %a{:href => "/profiles/#{user.username}"}= user.username
       - else

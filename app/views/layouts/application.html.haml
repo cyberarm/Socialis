@@ -9,28 +9,32 @@
   %body
     #container
       %center
-        #profilebox
-          - if logged_in?
-            <a href="/profiles/#{current_user.username}" title="View your public profile at: #{request.url}/profiles/#{current_user.username}">
-            = gravatar_image_tag(current_user.email, :gravatar => { :secure => true, :default => 'http://github.com/images/gravatars/gravatar-80.png', :size => 64 })
-            </a>
-            %p Welcome #{current_user.username.first_capitalize}!
-            %p
-              \#{link_to "Account" , edit_current_user_path}
-            %p
-              \#{link_to "Log out", logout_path}
-          - else
-            = link_to "Sign up", signup_path
-            or
-            \#{link_to "log in", login_path}.
         %p{:style => "font-size: 45px; text-shadow: 0px 0px 6px black; color: #b3f609;"} Socialis
         #menu
           %br/
           %a{:href => root_url, :class => "menu"} Home
+          %a{:href => about_path, :class => "menu"} About
+          %a{:href => help_path, :class => "menu"} Help
           %a{:href => statuses_path, :class => "menu"} Statuses
-          - if logged_in?
-            %a{:href => "/status/new", :class => "menu"} New Status
-            %a{:href => "/profile", :class => "menu"} My Profile
+          %br/
+          %br/
+          #profilebox
+            - if logged_in?
+              <a href="/profiles/#{current_user.username}" title="View your public profile at: #{request.url}profiles/#{current_user.username}">#{gravatar_image_tag(current_user.email, :gravatar => { :secure => true, :default => 'http://github.com/images/gravatars/gravatar-70.png', :size => 64 })}</a>
+              %br
+              %b
+                Welcome #{current_user.username.first_capitalize}!
+              %br/
+              %br/
+              %a{:href => "/status/new", :class => "menu"} Update My Status
+              %a{:href => "/profile", :class => "menu"} My Profile
+              \#{link_to "Account" , edit_current_user_path, :class => "menu"}
+              \#{link_to "Log out", logout_path, :class => "menu", :style => "background-color: orange;"}
+            - else
+              = link_to "Sign up", signup_path, :class => "menu", :style => "background-color: orange;"
+              %b
+                or
+              \#{link_to "log in", login_path, :class => "menu", :style => "background-color: orange;"}.
           %br/
           %br/
         - flash.each do |name, msg|
