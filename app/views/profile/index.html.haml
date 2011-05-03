@@ -8,6 +8,11 @@
 - else
   #{current_user.about}
 %br/
+%br/
+= link_to "Edit Profile",  edit_current_user_path, :style => "font-size: 20px;"
+%br/
+%hr/
+%br/
 %h2 Your Status Updates:
 - for status in @my_statuses do
   #status

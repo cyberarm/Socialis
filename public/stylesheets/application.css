@@ -38,6 +38,10 @@ color: black;
   margin-top: 20px;
 }
 
+#logo {
+background: #E1EFBB url(/images/socialis-logo.png') no-repeat bottom right;
+}
+
 #status {
 width: 700px;
 padding: 2px;
@@ -109,7 +113,7 @@ background-color: #4B7399;
 color: white;
 }
 .menu:active {
-background-color: #111;
+background-color: #4B7388;
 color: white;
 }
 

@@ -2,8 +2,8 @@ class StatusController < ApplicationController
 before_filter :login_required, :except => [:index]
 
   def index
-    @status = Status.find(:all)
-    @status_paginate = User.order('created_at').page(params[:page]).per(5)
+    @status = Status.order('created_at').page(params[:page]).per(5)
+    @status_paginate = Status.order('created_at').page(params[:page]).per(5)
     respond_to do |format|
   format.html
   format.json { render :json => @status }
