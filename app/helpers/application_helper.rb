@@ -8,7 +8,7 @@ module ApplicationHelper
   end
   
   def socialis_version
-    "Socialis version: 0.0.0.50"
+    "Socialis version: 0.0.0.57.4"
   end
 end
 

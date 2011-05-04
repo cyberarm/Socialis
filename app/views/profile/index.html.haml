@@ -1,4 +1,4 @@
-%h1 This is your profile #{current_user.username.first_capitalize}
+%h1 This is your private profile #{current_user.username.first_capitalize}
 %h2 Account Details:
 %h3 Username: #{current_user.username}
 %h3 Email: #{current_user.email}
@@ -6,7 +6,7 @@
 - if current_user.about.nil?
   Its Blank!
 - else
-  #{current_user.about}
+  #{markdown autolink current_user.about}
 %br/
 %br/
 = link_to "Edit Profile",  edit_current_user_path, :style => "font-size: 20px;"

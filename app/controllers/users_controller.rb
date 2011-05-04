@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
-  before_filter :login_required, :except => [:new, :create]
+  before_filter :login_required, :except => [:new, :create, :index]
+
+  def index
+  @user =  User.order('created_at DESC').page(params[:page]).per(8)
+  end
 
   def new
     @user = User.new

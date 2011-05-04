@@ -1,0 +1,12 @@
+%h2 Our Users
+%hr/
+- for user in @user do
+  #user
+    %h3
+      - if logged_in?
+        %a{:href => "/profiles/#{user.username}"} #{user.username.first_capitalize}
+        %h3 Signed-up #{time_ago_in_words(user.created_at)} ago
+      - else
+        %h3{:style => "color: darkseagreen;"} #{user.username}
+        %h3 Signed-up #{time_ago_in_words(user.created_at)} ago
+  = paginate @user

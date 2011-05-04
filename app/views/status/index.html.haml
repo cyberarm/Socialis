@@ -11,8 +11,9 @@
     %h3
       (Posted By: 
       - if logged_in?
-        %a{:href=> "/profiles/#{status.author}"} #{status.author.first_capitalize}
-      ,
+        %a{:href=> "/profiles/#{status.author}"} #{status.author.first_capitalize},
+      - else
+        #{status.author.first_capitalize},
       Created: #{time_ago_in_words(status.created_at)} Ago)
       %br/
       %a{:href => "/status/#{status.shorten}", :rel => "nofollow"} (View Status)

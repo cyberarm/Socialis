@@ -23,7 +23,7 @@ Socialis::Application.routes.draw do
   match '/help' => 'home#help'
   match '/profile' => 'profile#index'
   match '/profiles/:id' => 'profile#show'
-  match '/lists/users' => 'home#users'
+  match '/users' => 'users#index'
   
   root :to => 'home#index'
 

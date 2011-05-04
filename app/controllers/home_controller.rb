@@ -10,8 +10,4 @@ class HomeController < ApplicationController
   def help
   end
 
-  def users
-     @user = User.find(:all)
-  end
-
 end

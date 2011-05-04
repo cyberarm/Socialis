@@ -9,7 +9,7 @@
 - if @userl.about.nil?
 - else
   %h3 About #{@userl.username.first_capitalize}: 
-  %p #{@userl.about}
+  %p #{markdown autolink @userl.about}
 %h3 Latest Statuses:
 - for status in @user_statuses do
   #status
