@@ -21,7 +21,7 @@
           %br/
           #prfilebox
             - if logged_in?
-              %h1 Welcome, <a href="/profiles/#{current_user.username}" title="View your public profile at: #{request.url}profiles/#{current_user.username}">#{current_user.username.first_capitalize}</a>!
+              %h1 Welcome, <a href="/profiles/#{current_user.username}" title="View your public profile at: #{request.protocol}#{request.host}/profiles/#{current_user.username}">#{current_user.username.first_capitalize}</a>!
               %br/
               %a{:href => "/status/new", :class => "menu"} Update My Status
               %a{:href => "/profile", :class => "menu"} My Profile

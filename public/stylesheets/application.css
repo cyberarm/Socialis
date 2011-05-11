@@ -1,11 +1,11 @@
 body {
-  background-color: #4B7399;
-  font-family: Verdana, Helvetica, Arial;
-  font-size: 14px;
+    background-color: #333;
+    font-family: Verdana, Helvetica, Arial;
+    font-size: 14px;
 }
 
 textarea {
-resize: none;
+   resize: none;
 }
 
 a img {
@@ -34,41 +34,40 @@ color: black;
   margin: 0 auto;
   background-color: #FFF;
   padding: 20px 40px;
-  border: solid 1px black;
+  border: solid 3px black;
   margin-top: 20px;
 }
 
 #logo {
-background: #E1EFBB url(/images/socialis-logo.png') no-repeat bottom right;
+   background: #E1EFBB url(/images/socialis-logo.png') no-repeat bottom right;
 }
 
 #status {
-width: 700px;
-padding: 2px;
-background-color: #777;
-text-decoration:none;
-color: white;
-font-weight: bold;
-border-style: solid;
-border-color: black;
-border-width:1px;
-border-radius: 6px;
-margin: 8px;
+   width: 700px;
+   padding: 2px;
+   background-color: #777;
+   text-decoration:none;
+   color: white;
+   font-weight: bold;
+   border-style: solid;
+   border-color: black;
+   border-width:1px;
+   border-radius: 6px;
+   margin: 8px;
 }
 
 #user {
-display: block;
-width: 200px;
-padding: 2px;
-background-color: #3B5998;
-text-decoration:none;
-color: white;
-font-weight: bold;
-border-style: solid;
-border-color: black;
-border-width:1px;
-border-radius: 6px;
-margin: 5px;
+   width: 200px;
+   padding: 2px;
+   background-color: #3B5998;
+   text-decoration:none;
+   color: white;
+   font-weight: bold;
+   border-style: solid;
+   border-color: black;
+   border-width:1px;
+   border-radius: 6px;
+   margin: 5px;
 }
 
 #profilebox {
@@ -94,27 +93,27 @@ margin: 5px;
 }
 
 #menu {
-margin: 10px;
+   margin: 10px;
 }
 .menu {
-padding: 2px;
-background-color: #3B5998;
-text-decoration:none;
-color: white;
-font-size: 25px;
-border-style: solid;
-border-color: black;
-border-width:1px;
-height: 40px;
-border-radius: 6px;
+   padding: 2px;
+   background-color: #3B5998;
+   text-decoration:none;
+   color: white;
+   font-size: 25px;
+   border-style: solid;
+   border-color: black;
+   border-width:1px;
+   height: 40px;
+   border-radius: 6px;
 }
 .menu:hover {
-background-color: #4B7399;
-color: white;
+   background-color: #4B7399;
+   color: white;
 }
 .menu:active {
-background-color: #4B7388;
-color: white;
+   background-color: #4B7388;
+   color: white;
 }
 
 #flash_notice, #flash_error, #flash_alert {

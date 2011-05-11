@@ -1,5 +1,10 @@
 %h1
-  #{@userl.username.first_capitalize}'s Profile
+  #{@userl.username.first_capitalize}'s Profile 
+  - if is_user?
+    (This Is You)
+%b
+  - if is_user?
+    = link_to "Edit Profile",  edit_current_user_path
 %hr/
 %h3{:id => "user-image"}
   #{gravatar_image_tag(@userl.email, :gravatar => { :secure => true, :default => 'http://github.com/images/gravatars/gravatar-80.png', :size => 80 })}
@@ -21,3 +26,4 @@
     %h3
       (Created: #{time_ago_in_words(status.created_at)} Ago)
     %br/
+= paginate @user_statuses

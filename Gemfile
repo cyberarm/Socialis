@@ -39,4 +39,7 @@ end
 group :test do
 gem "mocha"
 # added by Nifty-Generators
+
+gem "webrat"
+# Testing
 end

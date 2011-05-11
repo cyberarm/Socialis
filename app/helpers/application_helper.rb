@@ -8,11 +8,15 @@ module ApplicationHelper
   end
   
   def socialis_version
-    "Socialis version: 0.0.0.57.4"
+    "Socialis version: 0.0.0.60"
+  end
+
+  def is_user?
+current_user.username == @userl.username
   end
 end
 
 public
 def first_capitalize
-  self.capitalize
+  mb_chars.capitalize.to_s
 end
