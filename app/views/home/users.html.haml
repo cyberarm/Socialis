@@ -1,7 +1,0 @@
-- for user in @user do
-  #user
-    %h3
-      - if logged_in?
-        %a{:href => "/profiles/#{user.username}"}= user.username
-      - else
-        = user.username

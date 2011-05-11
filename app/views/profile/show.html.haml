@@ -10,6 +10,7 @@
 - else
   %h3 About #{@userl.username.first_capitalize}: 
   %p #{markdown autolink @userl.about}
+%hr/
 %h3 Latest Statuses:
 - for status in @user_statuses do
   #status

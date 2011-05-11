@@ -5,6 +5,8 @@ class HomeController < ApplicationController
   end
 
   def about
+    @status = Status.find(:all)
+    @users = User.find(:all)
   end
 
   def help

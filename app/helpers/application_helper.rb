@@ -14,5 +14,5 @@ end
 
 public
 def first_capitalize
-  mb_chars.capitalize.to_s
+  self.capitalize
 end
