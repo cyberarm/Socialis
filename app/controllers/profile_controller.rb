@@ -3,7 +3,7 @@ before_filter :login_required
 	def index
 	 # The user should know want information we have
 		@my_statuses = Status.find_all_by_author(current_user.username)
-		@my_latest_status = Status.find_all_by_author(current_user.username)
+		@my_latest_status = Status.find_all_by_author(current_user.username, :limit => 1)
 	end
 
 	def show
