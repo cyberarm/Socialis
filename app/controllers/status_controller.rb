@@ -1,5 +1,5 @@
 class StatusController < ApplicationController
-before_filter :login_required, :except => [:index]
+before_filter :login_required, :except => [:index, :show]
 
   def index
     # List all the staatuses users have made
@@ -12,9 +12,14 @@ end
 end
 
   def show
+	   @userl = Status.find_by_author(params[:id])
   # We want users to be able to share and view there status	
   	@status = Status.find_by_shortened(params[:id])
   	@statusdel = Status.find_by_shortened(params[:id])
+	respond_to do |format|
+  format.html
+  format.json { render :json => @status }
+end
 
 end
 

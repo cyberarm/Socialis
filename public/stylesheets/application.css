@@ -53,7 +53,15 @@ color: black;
    border-color: black;
    border-width:1px;
    border-radius: 6px;
-   margin: 8px;
+   margin: 3px;
+}
+
+#share-box {
+width:400px;
+height: 26px;
+border-radius: 25px;
+background-color: #FFF;
+border-color: #000;
 }
 
 #user {

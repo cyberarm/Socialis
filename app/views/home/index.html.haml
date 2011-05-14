@@ -1,7 +1,4 @@
-<h2> Running 
-%span{:style => "color:orange;"}
-  #{socialis_version}
-</h2>
+%h3 Socialis, A Micro Social Network
 %h2 Latest Statuses:
 %hr/
 - for status in @latest do
@@ -11,11 +8,8 @@
       %span.warning Error: Status Message is Nil!
     %h3
       Posted By: 
-      - if logged_in?
-        <a href="/profiles/#{status.author}">#{status.author.first_capitalize}</a>,
-        #{time_ago_in_words(status.created_at)} Ago
-      - else
-        #{status.author.first_capitalize}
+      <a href="/profiles/#{status.author}">#{status.author.first_capitalize}</a>,
+      #{time_ago_in_words(status.created_at)} Ago
       %br/
   %br/
 %h2 Latest Users:
@@ -23,7 +17,4 @@
 - for user in @user do
   #user
     %p
-      - if logged_in?
-        %a{:href => "/profiles/#{user.username}"}= user.username
-      - else
-        = user.username
+      %a{:href => "/profiles/#{user.username}"}= user.username

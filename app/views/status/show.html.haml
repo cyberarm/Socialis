@@ -6,10 +6,13 @@
       Error: Status Message is Nil!
   %br/
   %b
-    - if @status.author == current_user.username
+  - if logged_in?
+    - if current_user.username == @status.author
       = "Created By You"
       %br/
       = link_to 'Delete', "#{@statusdel.id}", :confirm => 'Are you sure?', :method => :delete
       %br/
     - else
-    (Created: #{time_ago_in_words(@status.created_at)} ago)
+  (Created: #{time_ago_in_words(@status.created_at)} ago)
+  %h4 Share:
+  %input{:type =>"textbox", :value => "#{request.url}", :id => "share-box", :disabled => "disabled"}
