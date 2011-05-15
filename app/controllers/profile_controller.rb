@@ -18,4 +18,8 @@ before_filter :login_required, :only => [:index]
 		 @user_statuses = Status.where(:author => @userl.username).order('created_at')
 		 @user_statuses = @user_statuses.page(params[:page]).per(3)
 	end
+	
+	def friends
+	  @userl = User.find_by_username(params[:id])
+	end
 end

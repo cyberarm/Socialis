@@ -1,0 +1,18 @@
+%h2 #{@userl.username.first_capitalize}'s Friends
+- if @userl.friendships.blank?
+  This user has no friends
+  
+- for friendship in @userl.friendships
+  = link_to friendship.friend.username.first_capitalize #{friendship.friend.username.first_capitalize}
+  %br/
+  - if logged_in?
+    - if is_user?
+      (#{link_to "remove", friendship, :method => :delete})
+      %br/
+      %br/
+      %p= link_to "Find Friends", users_path
+%h2 Friended by Users
+- if @userl.inverse_friends.blank?
+  No one has befriended this user
+- for user in @userl.inverse_friends
+  %a{:href => "/profiles/#{user.username}"} #{user.username.first_capitalize}

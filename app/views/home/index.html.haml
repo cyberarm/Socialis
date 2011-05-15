@@ -1,5 +1,7 @@
 %h2 Latest Statuses:
 %hr/
+- if @latest.blank?
+  %h3 Nobody has posted anything
 - for status in @latest do
   #status
     = autolink markdown status.message
@@ -13,6 +15,8 @@
   %br/
 %h2 Latest Users:
 %hr/
+- if @user.blank?
+  %h3 Nobody has created an account, Can you hear that echo?
 - for user in @user do
   #user
     %p

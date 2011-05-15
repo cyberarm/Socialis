@@ -2,6 +2,8 @@
 %h3 All Statuses:
 %br/
 %hr/
+- if @status.blank?
+  %h3 Nobody has posted anything
 - for status in @status do
   #status
     = autolink markdown status.message

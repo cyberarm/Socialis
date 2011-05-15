@@ -1,5 +1,7 @@
 Socialis::Application.routes.draw do
   
+  resources :friendships
+
   # Nifty-Generators code do
 
   match 'user/edit' => 'users#edit', :as => :edit_current_user
@@ -23,7 +25,9 @@ Socialis::Application.routes.draw do
   match '/help' => 'home#help'
   match '/profile' => 'profile#index'
   match '/profiles/:id' => 'profile#show'
+  match '/profiles/:id/friends' => 'profile#friends'
   match '/users' => 'users#index'
+  match '/version' => 'application#version'
   
   root :to => 'home#index'
 
