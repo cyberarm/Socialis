@@ -2,7 +2,8 @@ class ProfileController < ApplicationController
 before_filter :login_required, :only => [:index]
 	def index
 	 # The user should know want information we have
-		@my_statuses = Status.find_all_by_author(current_user.username)
+		@where_is_my_statuses = Status.where(:author => current_user.username).order('created_at')
+     @my_statuses = @where_is_my_statuses.page(params[:page]).per(3)
 		@my_latest_status = Status.find_all_by_author(current_user.username, :limit => 1)
 	end
 

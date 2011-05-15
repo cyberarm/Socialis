@@ -10,6 +10,9 @@
     #container
       %center
         %img{:src => "/images/socialis-logo.png"}
+        %h3 A Micro Social Network
+        - if logged_in?
+          %h2 #{greeting}, <a href="/profiles/#{current_user.username}" title="View your public profile at: #{request.protocol}#{request.host}/profiles/#{current_user.username}">#{current_user.username.first_capitalize}</a>!
         #menu
           %br/
           %a{:href => root_url, :class => "menu"} Home
@@ -21,8 +24,6 @@
           %br/
           #prfilebox
             - if logged_in?
-              %h1 Welcome, <a href="/profiles/#{current_user.username}" title="View your public profile at: #{request.protocol}#{request.host}/profiles/#{current_user.username}">#{current_user.username.first_capitalize}</a>!
-              %br/
               %a{:href => "/status/new", :class => "menu"} Update My Status
               %a{:href => "/profile", :class => "menu"} My Profile
               \#{link_to "Account" , edit_current_user_path, :class => "menu"}

@@ -8,9 +8,14 @@ module ApplicationHelper
     auto_link(text)
     # Automatically make text like this "http://github.com" a link (without the quotes)
   end
+
+  def greeting
+   greetings = ["Hello", "Hey", "Greetings", "Salutations", "Welcome"]
+   greetings[rand(greetings.size)]
+  end
   
   def socialis_version
-    "Socialis version: 0.0.0.62"
+    "Socialis version: 0.0.0.65"
     # Version number
   end
 

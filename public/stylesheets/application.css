@@ -2,6 +2,7 @@ body {
     background-color: #333;
     font-family: Verdana, Helvetica, Arial;
     font-size: 14px;
+    margin: 0px;
 }
 
 textarea {
@@ -108,7 +109,7 @@ border-color: #000;
    background-color: #3B5998;
    text-decoration:none;
    color: white;
-   font-size: 25px;
+   font-size: 20px;
    border-style: solid;
    border-color: black;
    border-width:1px;
