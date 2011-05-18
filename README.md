@@ -9,10 +9,10 @@ Current Features:
 
 * Users have a Profile page.
 
+* Friends. (Incomplete)
+
 Planned Features:
 
 * User groups
 
 * User pages
-
-* Friends
