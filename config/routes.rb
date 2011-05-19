@@ -23,10 +23,18 @@ Socialis::Application.routes.draw do
   match '/statuses' => 'status#index'
   match '/about' => 'home#about'
   match '/help' => 'home#help'
+  
+  # Users Have profile pages
   match '/profile' => 'profile#index'
   match '/profiles/:id' => 'profile#show'
   match '/profiles/:id/friends' => 'profile#friends'
+  match '/profiles/:id/statuses' => 'profile#statuses'
+  
+  # User Index
+  match '/profiles' => 'users#index'
   match '/users' => 'users#index'
+  
+  # Future version compare
   match '/version' => 'application#version'
   
   root :to => 'home#index'

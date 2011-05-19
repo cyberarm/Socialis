@@ -12,8 +12,10 @@ end
 
 def destroy
   @friendship = current_user.friendships.find(params[:id])
-  @friendship.destroy
+  if @friendship.destroy
   flash[:notice] = "Removed friend."
-  redirect_to "/profiles/#{current_user.username}"
-end
+  redirect_to "/profiles/#{current_user.username}/friends"
+  else
+	  flash[:notice] = "Unable to remove friend, Try again?"
+  end
 end

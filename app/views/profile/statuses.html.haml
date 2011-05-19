@@ -1,0 +1,20 @@
+%h4 <a href="#{ root_url }profiles/#{@userl.username}/">Back to #{@userl.username}'s Profile?</a>
+%h1 #{@userl.username.first_capitalize}'s Statuses
+%h2 Lastest Status:
+- if @user_latest_status.blank?
+  %h3 No Statuses
+- for status in @user_latest_status do
+  #status
+    = autolink markdown status.message
+    %h3
+      (Created: #{time_ago_in_words(status.created_at)} Ago)
+    
+%h2 Statuses:
+- if @user_statuses.blank?
+  %h3 No Statuses
+- for status in @user_statuses do
+  #status
+    = autolink markdown status.message
+    %h3 (Created: #{time_ago_in_words(status.created_at)} Ago)
+
+= paginate @user_statuses

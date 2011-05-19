@@ -13,27 +13,14 @@
   %br/
   Profile Image
 %h3 Member since: #{time_ago_in_words(@userl.created_at)} ago
+- if @userl.website.blank?
+- else
+  %h3 Website:
+  %p #{sanitize autolink @userl.website}
 - if @userl.about.blank?
 - else
   %h3 About #{@userl.username.first_capitalize}: 
-  %p #{markdown autolink @userl.about}
+  %p #{autolink markdown @userl.about}
 %h3 This user has: <a href="/profiles/#{@userl.username}/friends">#{@userl.friendships.length}</a> Friends
+%h3 This user has: <a href="/profiles/#{@userl.username}/statuses">#{@statuses.count}</a> Statuses
 %hr/
-%h3 Lastest Status:
-- if @user_latest_status.blank?
-  %h2 No Statuses
-- for status in @user_latest_status do
-  #status
-    = autolink markdown status.message
-    %h3
-      (Created: #{time_ago_in_words(status.created_at)} Ago)
-    
-%h3 Statuses:
-- if @user_statuses.blank?
-  %h2 No Statuses
-- for status in @user_statuses do
-  #status
-    = autolink markdown status.message
-    %h3 (Created: #{time_ago_in_words(status.created_at)} Ago)
-
-= paginate @user_statuses

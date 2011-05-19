@@ -1,11 +1,16 @@
+- title "Your Profile - Socialis"
 %h1 This is your private profile #{current_user.username.first_capitalize}
 %h2 Account Details:
 %h3 Username: #{current_user.username}
 %h3 Email: #{current_user.email}
+- if current_user.website.blank?
+- else
+  %h3 Website: 
+  #{sanitize autolink current_user.website}
 - if current_user.about.blank?
 - else
   %h3 About You: 
-  #{markdown autolink current_user.about}
+  #{autolink markdown current_user.about}
 %br/
 %br/
 = link_to "Edit Profile",  edit_current_user_path, :style => "font-size: 20px;"
@@ -13,6 +18,8 @@
 %hr/
 %br/
 %h2 Your Lastest Status:
+- if @my_latest_status.blank?
+  %h3 You have no statuses, <a href="#{ new_statu_path }">Create one?</a>
 - for status in @my_latest_status do
   #status
     = autolink markdown status.message
@@ -20,6 +27,8 @@
       (Created: #{time_ago_in_words(status.created_at)} Ago)
   %br/
 %h2 Your Status Updates:
+- if @my_statuses.blank?
+  %h3 You have no statuses, <a href="#{ new_statu_path }">Create one?</a>
 - for status in @my_statuses do
   #status
     = autolink markdown status.message

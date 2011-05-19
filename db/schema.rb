@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110515191740) do
+ActiveRecord::Schema.define(:version => 20110518215508) do
 
   create_table "friendships", :force => true do |t|
     t.integer  "user_id"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20110515191740) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "about"
+    t.string   "website"
   end
 
 end

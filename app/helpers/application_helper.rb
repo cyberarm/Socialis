@@ -5,7 +5,7 @@ module ApplicationHelper
   end
   
   def autolink(text)
-    auto_link(text)
+    auto_link(text, :html => { :target => '_blank' })
     # Automatically make text like this "http://github.com" a link (without the quotes)
   end
 
@@ -17,6 +17,10 @@ module ApplicationHelper
   def socialis_version
     "Socialis version: 0.0.0.65"
     # Version number
+  end
+  
+  def version
+    '0.0.0.65'
   end
 
   def is_user?

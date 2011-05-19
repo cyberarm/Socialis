@@ -1,3 +1,4 @@
+%h4 <a href="#{ root_url }profiles/#{@userl.username}/">Back to #{@userl.username}'s Profile?</a>
 %h2 #{@userl.username.first_capitalize}'s Friends
 - if @userl.friendships.blank?
   This user has no friends
@@ -10,7 +11,7 @@
       (#{link_to "remove", friendship, :method => :delete})
       %br/
       %br/
-      %p= link_to "Find Friends", users_path
+%p= link_to "Find Friends", users_path
 %h2 Friended by Users
 - if @userl.inverse_friends.blank?
   No one has befriended this user
