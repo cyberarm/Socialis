@@ -16,3 +16,5 @@ Planned Features:
 * User groups
 
 * User pages
+
+* Status and User search
