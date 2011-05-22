@@ -17,5 +17,6 @@ def destroy
   redirect_to "/profiles/#{current_user.username}/friends"
   else
 	  flash[:notice] = "Unable to remove friend, Try again?"
+   end
   end
 end

@@ -11,3 +11,7 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+Webrat.configure do |config|  
+  config.mode = :rack  
+end 

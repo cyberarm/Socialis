@@ -31,7 +31,7 @@ def create
 	      flash[:notice] = "Status Saved"
         format.html { redirect_to "/statuses" }  
       else  
-        flash[:notice] = "Message failed to save."  
+        flash[:notice] = "Status failed to save."  
         format.html { redirect_to "/status/new" }  
       end  
     end  

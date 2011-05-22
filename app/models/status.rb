@@ -1,4 +1,7 @@
 class Status < ActiveRecord::Base
+
+validates :message, :presence => true
+validates :author, :presence => true
   
   default_scope :order => 'created_at DESC'
   

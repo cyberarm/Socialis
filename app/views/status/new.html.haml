@@ -1,5 +1,5 @@
 - title "New Status"
-- form_tag(:controller => "status", :action => "create") do
+= form_tag(:controller => "status", :action => "create") do
   %h2
     = label_tag(:message, "What are you doing right now?")
   = text_area_tag(:message, nil, :size => "44x6", :placeholder => "Type something...", :maxlength => 200)

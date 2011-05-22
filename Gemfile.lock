@@ -29,8 +29,10 @@ GEM
       activesupport (= 3.0.7)
     activesupport (3.0.7)
     alphadecimal (1.1.1)
-    arel (2.0.9)
+    arel (2.0.10)
+    bcrypt-ruby (2.1.4)
     bcrypt-ruby (2.1.4-x86-mingw32)
+    bluecloth (2.1.0)
     bluecloth (2.1.0-x86-mingw32)
     builder (2.1.2)
     erubis (2.6.6)
@@ -57,7 +59,8 @@ GEM
     mime-types (1.16)
     mocha (0.9.12)
     nifty-generators (0.4.6)
-    nokogiri (1.4.4.1-x86-mingw32)
+    nokogiri (1.4.4)
+    nokogiri (1.4.4-x86-mingw32)
     polyglot (0.3.1)
     rack (1.2.2)
     rack-mount (0.6.14)
@@ -78,6 +81,7 @@ GEM
       rake (>= 0.8.7)
       thor (~> 0.14.4)
     rake (0.8.7)
+    sqlite3 (1.3.3)
     sqlite3 (1.3.3-x86-mingw32)
     thor (0.14.6)
     treetop (1.4.9)
@@ -89,6 +93,7 @@ GEM
       rack-test (>= 0.5.3)
 
 PLATFORMS
+  ruby
   x86-mingw32
 
 DEPENDENCIES
@@ -103,5 +108,6 @@ DEPENDENCIES
   mocha
   nifty-generators
   rails (= 3.0.7)
+  rake (= 0.8.7)
   sqlite3
   webrat

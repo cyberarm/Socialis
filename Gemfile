@@ -8,6 +8,8 @@ gem 'rails', '3.0.7'
 gem 'sqlite3' 
 # Database
 
+gem 'rake', '0.8.7'
+
 gem "bcrypt-ruby", :require => "bcrypt"
 
 gem 'haml' 
