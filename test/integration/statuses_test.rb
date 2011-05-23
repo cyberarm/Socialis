@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class StatusesTest < ActionDispatch::IntegrationTest
+  test "Statuses List" do
+	visit "/statuses"
+	assert_contain "Statuses"
+end
+
   test "Create valid Status" do
     User.create!(:username => "cyber", :email => "cyber@test-rails-app.com", :password => "secret")
     visit "/login"

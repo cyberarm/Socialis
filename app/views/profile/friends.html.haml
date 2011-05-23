@@ -4,7 +4,7 @@
   This user has no friends
   
 - for friendship in @userl.friendships
-  = link_to friendship.friend.username.first_capitalize #{friendship.friend.username.first_capitalize}
+  %a{:href => "../#{friendship.friend.username}"} #{friendship.friend.username.first_capitalize}
   %br/
   - if logged_in?
     - if is_user?

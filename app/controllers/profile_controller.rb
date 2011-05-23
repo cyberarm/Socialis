@@ -11,14 +11,16 @@ before_filter :login_required, :only => [:index]
 	def show
 	  # We want users to have a profile page
 		 @userl = User.find_by_username(params[:id])
-		 @statuses = Status.find_all_by_author(@userl.username) 
+		 @statuses = Status.find_all_by_author(@userl.username)
 	end
 	
 	def friends
+	# Show the users friends
 	  @userl = User.find_by_username(params[:id])
 	end
 	
 	def statuses
+	# show the users statuses
 	 @userl = User.find_by_username(params[:id])
 	  @user = User.find_by_username(params[:id])
 	 @statuses = Status.find_all_by_author(@userl.username) 
