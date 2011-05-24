@@ -1,3 +1,4 @@
+- title "#{@userl.username.first_capitalize} Profile - Socialis"
 %h1
   #{@userl.username.first_capitalize}'s Profile 
   -if logged_in?
@@ -16,11 +17,11 @@
 - if @userl.website.blank?
 - else
   %h3 Website:
-  %p #{sanitize autolink @userl.website}
+  %p #{autolink markdown @userl.website}
 - if @userl.about.blank?
 - else
   %h3 About #{@userl.username.first_capitalize}: 
   %p #{autolink markdown @userl.about}
-%h3 This user has: <a href="/profiles/#{@userl.username}/friends">#{@userl.friendships.length}</a> Friends
+%h3 This user has: <a href="/profiles/#{@userl.username}/friends">#{@userl.friendships.count}</a> Friends
 %h3 This user has: <a href="/profiles/#{@userl.username}/statuses">#{@statuses.count}</a> Statuses
 %hr/

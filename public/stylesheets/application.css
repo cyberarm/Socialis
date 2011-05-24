@@ -39,7 +39,7 @@ color: black;
 }
 
 #logo {
-   background: #E1EFBB url(/images/socialis-logo.png') no-repeat bottom right;
+   background: #E1EFBB url('/images/socialis-logo.png') no-repeat bottom right;
 }
 
 #status {
@@ -170,3 +170,4 @@ border-color: #000;
 .error_messages ul {
   margin: 0;
 }
+

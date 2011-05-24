@@ -21,6 +21,7 @@ module ApplicationHelper
   
   def version
     '0.0.0.65'
+	# called when visiting: /version.json
   end
 
   def is_user?
