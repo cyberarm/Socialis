@@ -2,12 +2,14 @@
 %h2 Our Users
 %hr/
 - for user in @user do
-  #userlist
+  #user
     %h3
       %a{:href => "/profiles/#{user.username}"} #{user.username.first_capitalize}
       %h3 Signed-up #{time_ago_in_words(user.created_at)} ago
       - if logged_in?
-        = link_to "Add Friend", friendships_path(:friend_id => user), :method => :post
-      %hr{:width => "300px"}
+        - if current_user.username == user.username
+        - else
+          = link_to "Add Friend", friendships_path(:friend_id => user), :method => :post
+      %br
         
 = paginate @user

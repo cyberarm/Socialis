@@ -45,9 +45,9 @@ color: black;
 #status {
    width: 700px;
    padding: 2px;
-   background-color: #777;
+   background-color: white;
    text-decoration:none;
-   color: white;
+   color: #555;
    font-weight: bold;
    border-style: solid;
    border-color: black;
@@ -65,17 +65,21 @@ border-color: #000;
 }
 
 #user {
-   width: 200px;
+   width: 600px;
    padding: 2px;
-   background-color: #3B5998;
-   text-decoration:none;
-   color: white;
+   background-color: white;
    font-weight: bold;
    border-style: solid;
    border-color: black;
    border-width:1px;
    border-radius: 6px;
    margin: 5px;
+}
+#user a{
+   text-decoration:none;
+}
+#user a:hover {
+   text-decoration:underline;
 }
 
 #profilebox {
