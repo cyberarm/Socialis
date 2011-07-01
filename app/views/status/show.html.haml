@@ -11,7 +11,7 @@
     - if current_user.username == @status.author
       = "Created By You"
       %br/
-      = link_to 'Delete', "#{@statusdel.id}", :confirm => 'Are you sure?', :method => :delete
+      = link_to 'Delete', "#{@statusdel.id}", :class => "button trash icon danger", :confirm => 'Are you sure?', :method => :delete
       %br/
     - else
   (Created: #{time_ago_in_words(@status.created_at)} ago)

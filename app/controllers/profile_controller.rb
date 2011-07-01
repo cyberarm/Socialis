@@ -1,35 +1,36 @@
 class ProfileController < ApplicationController
 before_filter :login_required, :only => [:index]
+  
+  # The user should know want information we have
 	def index
-	 # The user should know want information we have
 	  @where_is_my_statuses = Status.where(:author => current_user.username).order('created_at')
     @my_statuses = @where_is_my_statuses.page(params[:page]).per(3)
     @my_latest_status = Status.find_all_by_author(current_user.username, :limit => 1)
 		#@friend = current_user.friendships.find(params[:id])
 	end
 
+	# We want users to have a profile page
 	def show
-	  # We want users to have a profile page
-		 @userl = User.find_by_username(params[:id]) || User.find_by_id(params[:id])
+	   @userl = User.find_by_username(params[:id]) || User.find_by_id(params[:id])
 		 @statuses = Status.find_all_by_author(@userl.username)
 	end
 	
-	def friends
 	# Show the users friends
-	  @userl = User.find_by_username(params[:id])
+	def friends
+	 @userl = User.find_by_username(params[:id]) || User.find_by_id(params[:id])
 	end
 	
-	def statuses
 	# show the users statuses
-	 @userl = User.find_by_username(params[:id])
-	  @user = User.find_by_username(params[:id])
-	 @statuses = Status.find_all_by_author(@userl.username) 
+	def statuses
+	 @userl = User.find_by_username(params[:id]) || User.find_by_id(params[:id])
+	 @user = User.find_by_username(params[:id])
+	 @statuses = Status.find_all_by_author(@userl.id || @userl.username) 
 	 
      # We want to show the users latest Status
-    @user_latest_status = Status.find_all_by_author(@userl.username, :limit => 1) 
+    @user_latest_status = Status.find_all_by_author(@userl.username || @userl.id, :limit => 1) 
 
     # We want the users statuses on there profile page
-     @user_statuses = Status.where(:author => @userl.username).order('created_at')
+     @user_statuses = Status.where(:author => @userl.username || @userl.id).order('created_at')
      @user_statuses = @user_statuses.page(params[:page]).per(3)
 	end
 end

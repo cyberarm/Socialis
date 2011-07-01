@@ -1,7 +1,10 @@
 class SessionsController < ApplicationController
+
+  # New Sessions
   def new
   end
 
+  # Create  a new session (Login)
   def create
     user = User.authenticate(params[:login], params[:password])
     if user
@@ -13,6 +16,7 @@ class SessionsController < ApplicationController
     end
   end
 
+  # Destroy the users sessions (Logout)
   def destroy
     session[:user_id] = nil
     redirect_to root_url, :notice => "You have been logged out."

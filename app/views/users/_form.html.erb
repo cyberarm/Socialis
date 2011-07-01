@@ -1,9 +1,11 @@
 <%= form_for @user do |f| %>
   <%= f.error_messages %>
+  <% unless logged_in?%>
   <p>
     <%= f.label :username %><br />
     <%= f.text_field :username %>
   </p>
+  <% end %>
   <p>
     <%= f.label :email, "Email Address" %><br />
     <%= f.text_field :email %>
@@ -24,5 +26,5 @@
     <%= f.label :password_confirmation, "Confirm Password" %><br />
     <%= f.password_field :password_confirmation %>
   </p>
-  <p><%= f.submit (@user.new_record? ? "Sign up" : "Update") %></p>
+  <p><%= f.submit (@user.new_record? ? "Sign up" : "Update"), :class => "button big" %></p>
 <% end %>

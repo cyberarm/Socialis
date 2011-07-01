@@ -35,7 +35,7 @@ Socialis::Application.routes.draw do
   match '/users' => 'users#index'
   
   # Future version compare
-  match '/version' => 'application#version'
+  match '/version' => 'home#lookup_version'
   
   root :to => 'home#index'
 

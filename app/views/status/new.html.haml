@@ -5,11 +5,12 @@
   = text_area_tag(:message, nil, :size => "44x6", :placeholder => "Type something...", :maxlength => 200)
   %br/
   = text_field_tag :author, "", :value => "#{current_user.username}", :style => "display: none;"
-  = submit_tag("Post Status", :class => "status-buton")
+  = text_field_tag :email, "", :value => "#{current_user.email}", :style => "display: none;"
+  %button{:class => "button pill big comment icon", :type => "submit", :name => "commit"} Post Status
   (Max of 200 characters)
   %br/
   %br/
-  %b{:style => "font-size:20px;"} Please note: All status that are posted are public!
+  %b Please note: All status that are posted are public
   %br/
   %b Statuses are formatted in <a target="_blank" href="http://daringfireball.net/projects/markdown/syntax">Markdown</a>.
   %br/

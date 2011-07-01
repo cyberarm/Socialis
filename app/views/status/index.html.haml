@@ -5,15 +5,18 @@
 - if @status.blank?
   %h3 Nobody has posted anything
 - for status in @status do
-  #status
+  #status{:style => "overflow: hidden;"}
     = autolink markdown status.message
     - if status.message.nil?
       %span.warning Error: Status Message is Nil!
     %h3
+      #{gravatar_image_tag(status.email, :style => "float:left; border-radius: 3px; padding-bottom:45px;", :gravatar => { :secure => true, :default => "#{ root_url }images/default-icon.png", :size => 80 })}
       (Posted By: 
       <a href= "/profiles/#{status.author}"> #{status.author.first_capitalize}</a>,
       Created: #{time_ago_in_words(status.created_at)} Ago)
       %br/
       %a{:href => "/status/#{status.shorten}", :rel => "nofollow"} (View Status)
+      %br/
+      %br/
   %br/
 = paginate @status_paginate

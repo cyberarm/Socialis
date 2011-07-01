@@ -1,9 +1,11 @@
 class StatusController < ApplicationController
 before_filter :login_required, :except => [:index, :show]
 
+  # List all the statuses users have made
   def index
-    # List all the staatuses users have made
+    @userl = User.find_by_username(params[:id]) || User.find_by_id(params[:id])
     @status = Status.order('created_at').page(params[:page]).per(5)
+    #@statusdel = Status.find_by_shortened(params[:id])
     @status_paginate = Status.order('created_at').page(params[:page]).per(5)
     respond_to do |format|
   format.html
@@ -11,9 +13,9 @@ before_filter :login_required, :except => [:index, :show]
 end
 end
 
+  # We want users to be able to share and view there status 
   def show
-	   @userl = Status.find_by_author(params[:id])
-  # We want users to be able to share and view there status	
+    @userl = Status.find_by_author(params[:id])
   	@status = Status.find_by_shortened(params[:id])
   	@statusdel = Status.find_by_shortened(params[:id])
 	respond_to do |format|
@@ -23,9 +25,9 @@ end
 
 end
 
+# Users can create statuses
 def create  
-  # Users can create statuses
-    @status = Status.create(:message => params[:message], :author => params[:author])  
+    @status = Status.create(:message => params[:message], :author => params[:author], :email => params[:email])  
     respond_to do |format|  
       if @status.save  
 	      flash[:notice] = "Status Saved"
@@ -37,9 +39,8 @@ def create
     end  
   end 
  
-  
-  def destroy
   # If a users wants to delete a status, let them
+  def destroy
     @status = Status.find(params[:id])
     @status.destroy
 

@@ -5,7 +5,8 @@
 - if @user_latest_status.blank?
   %h3 No Statuses
 - for status in @user_latest_status do
-  #status
+  #status{:style => "clear: both; overflow: hidden;"}
+    #{gravatar_image_tag(@userl.email, :style => "float:left; border-radius: 3px;", :gravatar => { :secure => true, :default => "#{ root_url }images/default-icon.png", :size => 80 })}
     = autolink markdown status.message
     %h3
       (Created: #{time_ago_in_words(status.created_at)} Ago)
@@ -14,7 +15,8 @@
 - if @user_statuses.blank?
   %h3 No Statuses
 - for status in @user_statuses do
-  #status
+  #status{:style => "clear: both; overflow: hidden;"}
+    #{gravatar_image_tag(@userl.email, :style => "float:left; border-radius: 3px;", :gravatar => { :secure => true, :default => "#{ root_url }images/default-icon.png", :size => 80 })}
     = autolink markdown status.message
     %h3 (Created: #{time_ago_in_words(status.created_at)} Ago)
 

@@ -8,6 +8,7 @@
     - if status.message.nil?
       %span.warning Error: Status Message is Nil!
     %h3
+      #{gravatar_image_tag(status.email, :style => "float:left; border-radius: 3px; padding-bottom:45px;", :gravatar => { :secure => true, :default => "#{ root_url }images/default-icon.png", :size => 80 })}
       Posted By: 
       <a href="/profiles/#{status.author}">#{status.author.first_capitalize}</a>,
       #{time_ago_in_words(status.created_at)} Ago
@@ -19,5 +20,6 @@
   %h3 Nobody has created an account, Can you hear that echo?
 - for user in @user do
   #user
-    %h3
+    %h2
+      #{gravatar_image_tag(status.email, :style => "float:left; border-radius: 3px; padding-bottom:45px;", :gravatar => { :secure => true, :default => "#{ root_url }images/default-icon.png", :size => 40 })}
       %a{:href => "/profiles/#{user.username}"}= user.username

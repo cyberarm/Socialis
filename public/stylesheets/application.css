@@ -3,9 +3,11 @@ body {
     font-family: Verdana, Helvetica, Arial;
     font-size: 14px;
     margin: 0px;
+    text-align: center;
 }
 
 textarea {
+	border-radius: 3px;
 }
 
 a img {
@@ -36,6 +38,7 @@ color: black;
   padding: 20px 40px;
   border: solid 3px black;
   margin-top: 20px;
+  border-radius: 3px;
 }
 
 #logo {
@@ -43,17 +46,21 @@ color: black;
 }
 
 #status {
+   overflow: hidden;
    width: 700px;
    padding: 2px;
    background-color: white;
    text-decoration:none;
    color: #555;
    font-weight: bold;
-   border-style: solid;
+   border-bottom-style: solid;
    border-color: black;
    border-width:1px;
-   border-radius: 6px;
+   /*border-radius: 6px;*/
    margin: 3px;
+}
+#status img{
+	width: 42px;
 }
 
 #share-box {
@@ -65,14 +72,15 @@ border-color: #000;
 }
 
 #user {
+   overflow: hidden;
    width: 600px;
    padding: 2px;
    background-color: white;
    font-weight: bold;
-   border-style: solid;
+   border-bottom-style: solid;
    border-color: black;
    border-width:1px;
-   border-radius: 6px;
+   /*border-radius: 6px;*/
    margin: 5px;
 }
 #user a{
@@ -81,19 +89,8 @@ border-color: #000;
 #user a:hover {
    text-decoration:underline;
 }
-
-#profilebox {
-	float:none;
-	border: solid 2px lime;
-	background-color: #CFC;
-	padding:10px;
-	margin: 10px;
-}
-#profilebox img{
-	border:solid 1px black;
-	background-color: white;
-	padding: 4px;
-	border-radius: 4px;
+#user img{
+	width: 42px;
 }
 
 #user-image img{
