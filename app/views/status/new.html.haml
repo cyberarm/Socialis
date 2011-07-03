@@ -2,7 +2,7 @@
 = form_tag(:controller => "status", :action => "create") do
   %h2
     = label_tag(:message, "What are you doing right now?")
-  = text_area_tag(:message, nil, :size => "44x6", :placeholder => "Type something...", :maxlength => 200)
+  = text_area_tag(:message, nil, :size => "44x6", :placeholder => "Type something...", :maxlength => 200, :autofocus => "true")
   %br/
   = text_field_tag :author, "", :value => "#{current_user.username}", :style => "display: none;"
   = text_field_tag :email, "", :value => "#{current_user.email}", :style => "display: none;"
@@ -10,8 +10,8 @@
   (Max of 200 characters)
   %br/
   %br/
-  %b Please note: All status that are posted are public
+  %b Please note: All status that are posted are publicly viewable.
   %br/
   %b Statuses are formatted in <a target="_blank" href="http://daringfireball.net/projects/markdown/syntax">Markdown</a>.
   %br/
-  %b "http://some-random-website.com" will automatically turn into a Link
+  %b "http://some-random-website.com" will automatically turn into a Link (without the qoutes "")

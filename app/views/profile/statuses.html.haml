@@ -5,19 +5,21 @@
 - if @user_latest_status.blank?
   %h3 No Statuses
 - for status in @user_latest_status do
-  #status{:style => "clear: both; overflow: hidden;"}
-    #{gravatar_image_tag(@userl.email, :style => "float:left; border-radius: 3px;", :gravatar => { :secure => true, :default => "#{ root_url }images/default-icon.png", :size => 80 })}
-    = autolink markdown status.message
-    %h3
-      (Created: #{time_ago_in_words(status.created_at)} Ago)
+  #status
+    #status-user
+      %p{:style => "float: right;"} <a href="../../status/#{status.id}">#{time_ago_in_words(status.created_at)} Ago</a>
+      #{gravatar_image_tag(@userl.email, :style => "float:left; border-radius: 3px;", :gravatar => { :secure => true, :default => "#{ root_url }images/default-icon.png", :size => 80 })}
+    #status-content
+      = autolink markdown status.message
     
 %h2 Statuses:
 - if @user_statuses.blank?
   %h3 No Statuses
 - for status in @user_statuses do
-  #status{:style => "clear: both; overflow: hidden;"}
-    #{gravatar_image_tag(@userl.email, :style => "float:left; border-radius: 3px;", :gravatar => { :secure => true, :default => "#{ root_url }images/default-icon.png", :size => 80 })}
-    = autolink markdown status.message
-    %h3 (Created: #{time_ago_in_words(status.created_at)} Ago)
-
+  #status
+    #status-user
+      %p{:style => "float: right;"} <a href="../../status/#{status.id}">#{time_ago_in_words(status.created_at)} Ago</a>
+      #{gravatar_image_tag(@userl.email, :style => "float:left; border-radius: 3px;", :gravatar => { :secure => true, :default => "#{ root_url }images/default-icon.png", :size => 80 })}
+    #status-content
+      = autolink markdown status.message
 = paginate @user_statuses

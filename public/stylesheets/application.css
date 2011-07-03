@@ -7,7 +7,9 @@ body {
 }
 
 textarea {
-	border-radius: 3px;
+   border-radius: 3px;
+   border-color: #999;
+   outline-color: #3B5998;
 }
 
 a img {
@@ -45,6 +47,23 @@ color: black;
    background: #E1EFBB url('/images/socialis-logo.png') no-repeat bottom right;
 }
 
+#status-user{
+float: left;
+width: 250px;
+border-right-style: solid;
+border-right-width: 1px;
+border-right-color: #999;
+padding-right: 5px;
+}
+#status-user p{
+margin-left: 10px;
+}
+
+#status-content{
+margin-left: 10px;
+float: left;
+}
+
 #status {
    overflow: hidden;
    width: 700px;
@@ -60,7 +79,7 @@ color: black;
    margin: 3px;
 }
 #status img{
-	width: 42px;
+	width: 64px;
 }
 
 #share-box {
@@ -83,6 +102,9 @@ border-color: #000;
    /*border-radius: 6px;*/
    margin: 5px;
 }
+#user h2{
+float: left;
+}
 #user a{
    text-decoration:none;
 }
@@ -90,7 +112,8 @@ border-color: #000;
    text-decoration:underline;
 }
 #user img{
-	width: 42px;
+   width: 42px;
+margin-right:12px;
 }
 
 #user-image img{

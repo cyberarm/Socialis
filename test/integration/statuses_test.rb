@@ -11,6 +11,7 @@ end
     visit "/login"
     fill_in "Username", :with => "cyber"
     fill_in "Password", :with => "secret"
+    fill_in "email", :with => "cyber@test-rails-app.com"
     click_button "Log in"
     follow_redirect!
     assert_contain "Logged in successfully."
@@ -18,6 +19,7 @@ end
     visit "/status/new"
     fill_in "message", :with => "Test"
     fill_in "author", :with => "cyber"
+    fill_in "email", :with => "cyber@test-rails-app.com"
     click_button "Post Status"
     follow_redirect!
     assert_contain "Status Saved"

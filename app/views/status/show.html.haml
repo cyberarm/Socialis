@@ -1,19 +1,23 @@
 - title "#{@status.author.first_capitalize}'s Status - Socialis"
 #status
-  %h3 #{@status.author.mb_chars.capitalize.to_s} Posted:
-  %p
-    #{autolink markdown @status.message}
-    - if @status.message.nil?
-      Error: Status Message is Nil!
-  %br/
-  %b
-  - if logged_in?
-    - if current_user.username == @status.author
-      = "Created By You"
+  - if @status.blank?
+    %h3 Nobody has posted anything
+  - else
+    #status-user
+      #{gravatar_image_tag(@status.email, :style => "float:left; border-radius: 3px; padding-bottom:15px;", :gravatar => { :secure => true, :default => "#{ root_url }images/default-icon.png", :size => 80 })}
+      %span{:style => "float: right;"} <a href="/profiles/#{@status.author}">#{@status.author.first_capitalize}</a>
       %br/
-      = link_to 'Delete', "#{@statusdel.id}", :class => "button trash icon danger", :confirm => 'Are you sure?', :method => :delete
-      %br/
-    - else
-  (Created: #{time_ago_in_words(@status.created_at)} ago)
+      %p{:style => "float: right;"}
+        #{time_ago_in_words(@status.created_at)} Ago
+    #status-content
+      = autolink markdown @status.message
+- if logged_in?
+  - if current_user.username == @status.author
+    = "Created By You"
+    %br/
+    = link_to 'Delete', "#{@statusdel.id}", :class => "button trash icon danger", :confirm => 'Are you sure?', :method => :delete
+    %br/
+  - else
+    (Created: #{time_ago_in_words(@status.created_at)} ago)
   %h4 Share:
   %input{:type =>"textbox", :value => "#{request.url}", :id => "share-box", :disabled => "disabled"}

@@ -31,6 +31,6 @@ class BasicPagesTest < ActionDispatch::IntegrationTest
   test "Version" do
  # validates presence of Version page
 	visit "/version.json"
-	assert_contain "0.0.0.65"
+	assert_contain "0.0.0.70"
   end
 end

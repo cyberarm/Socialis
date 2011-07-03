@@ -42,8 +42,11 @@ def create
   # If a users wants to delete a status, let them
   def destroy
     @status = Status.find(params[:id])
-    @status.destroy
-
+    if @status.destroy
+      flash[:notice] = "Deleted Status"
+    else
+      flash[:error] = "Status did not delete. Try again later."
+    end
     respond_to do |format|
       format.html { redirect_to(status_url) }
       format.xml  { head :ok }
