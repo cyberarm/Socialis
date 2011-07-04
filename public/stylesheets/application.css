@@ -55,13 +55,16 @@ border-right-width: 1px;
 border-right-color: #999;
 padding-right: 5px;
 }
-#status-user p{
-margin-left: 10px;
+#status-user span{
+margin-left: 15px;
 }
 
 #status-content{
 margin-left: 10px;
 float: left;
+/*word-warp: break-word;*/
+width: 400px;
+height: 70px;
 }
 
 #status {
